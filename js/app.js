@@ -55,6 +55,11 @@ function playAudio(src, track) {
 
     // Play audio
     my_media[track].play();
+
+    // Mute volume after 5 seconds
+    setTimeout(function () {
+        my_media[track].setVolume('0.0');
+    }, 5000);
 }
 
 function stopAudio(track) {
