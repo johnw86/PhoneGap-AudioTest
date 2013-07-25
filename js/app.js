@@ -20,7 +20,7 @@ $(".start").click(function () {
         playAudio(track1, 1);
     }
     else {
-        playAudio(track1, 2);
+        playAudio(track2, 2);
     }
 });
 
