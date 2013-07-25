@@ -1,6 +1,14 @@
 ﻿// Wait for Cordova to load
 //
-//document.addEventListener("deviceready", onDeviceReady, false);
+if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+    document.addEventListener("deviceready", onDeviceReady, false);
+} else {
+    onDeviceReady();
+}
+
+function onDeviceReady() {
+    $('#title').text('Device now ready');
+}
 
 var track1 = "http://downloads.bbc.co.uk/worldservice/learningenglish/webcast/mp3/betterspeaking/tae_betterspeaking_1_080207.mp3";
 var track2 = "http://audio.ibeat.org/content/enoe/enoe_-_Student_Beat.mp3";
@@ -53,9 +61,6 @@ var my_media = {};
 function playAudio(src, track) {
     // Create Media object from src
     my_media[track] = new Media(src, onSuccess, onError);
-
-    //Set volume before play
-    my_media[track].setVolume('1.0');
 
     // Play audio
     my_media[track].play();
