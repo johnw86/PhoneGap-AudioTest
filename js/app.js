@@ -31,7 +31,7 @@ $(".stop").click(function () {
 
 $(".volumeup").click(function () {
     var trackNum = getTrackNumber($(this));
-    setVolume("0.8", trackNum);
+    setVolume("1.0", trackNum);
 });
 
 
@@ -54,18 +54,11 @@ function playAudio(src, track) {
     // Create Media object from src
     my_media[track] = new Media(src, onSuccess, onError);
 
+    //Set volume before play
+    my_media[track].setVolume(volume);
+
     // Play audio
-    my_media[track].play();
-
-    // Mute volume after 5 seconds
-    setTimeout(function () {
-        my_media[track].setVolume('0.0');
-    }, 5000);
-
-    // Full volume after 10 seconds
-    setTimeout(function () {
-        my_media[track].setVolume('1.0');
-    }, 10000);
+    my_media[track].play('1.0');
 }
 
 function stopAudio(track) {
