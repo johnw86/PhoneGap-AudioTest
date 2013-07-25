@@ -2,7 +2,7 @@
 //
 //document.addEventListener("deviceready", onDeviceReady, false);
 
-var track1 = "http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3";
+var track1 = "http://downloads.bbc.co.uk/worldservice/learningenglish/webcast/mp3/betterspeaking/tae_betterspeaking_1_080207.mp3";
 var track2 = "http://audio.ibeat.org/content/enoe/enoe_-_Student_Beat.mp3";
 
 function getTrackNumber(elm) {
