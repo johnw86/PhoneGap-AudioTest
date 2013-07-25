@@ -36,6 +36,7 @@ $(".volumeup").click(function () {
 
 
 $(".volumedown").click(function () {
+    var trackNum = getTrackNumber($(this));
     setVolume("0.2", trackNum);
 });
 
@@ -60,6 +61,11 @@ function playAudio(src, track) {
     setTimeout(function () {
         my_media[track].setVolume('0.0');
     }, 5000);
+
+    // Full volume after 10 seconds
+    setTimeout(function () {
+        my_media[track].setVolume('1.0');
+    }, 10000);
 }
 
 function stopAudio(track) {
@@ -84,6 +90,7 @@ function onError(error) {
 //
 function setVolume(volume, track) {
     if (my_media[track]) {
+        alert('tried to set the volume to: ' + volume + ' for track:' + track);
         my_media[track].setVolume(volume);
     }
 }
