@@ -55,10 +55,10 @@ function playAudio(src, track) {
     my_media[track] = new Media(src, onSuccess, onError);
 
     //Set volume before play
-    my_media[track].setVolume(volume);
+    my_media[track].setVolume('1.0');
 
     // Play audio
-    my_media[track].play('1.0');
+    my_media[track].play();
 }
 
 function stopAudio(track) {
